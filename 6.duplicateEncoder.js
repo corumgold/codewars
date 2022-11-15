@@ -12,8 +12,15 @@
 // Assertion messages may be unclear about what they display in some languages.
 // If you read "...It Should encode XXX", the "XXX" is the expected result, not the input!
 
-let solveCount = 0;
+let solveCount = 1;
 
 function duplicateEncode(word) {
-  // ...
+  let arrayed = word.toLowerCase().split("");
+  return arrayed
+    .map((character) => {
+      return arrayed.filter((char) => char === character).length > 1
+        ? ")"
+        : "(";
+    })
+    .join("");
 }
