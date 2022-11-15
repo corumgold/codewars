@@ -2,8 +2,14 @@
 
 // It should remove all values from list a, which are present in list b keeping their order.
 
-arrayDiff([1, 2], [1]) == [2]
+arrayDiff([1, 2], [1]); // [2]
 
 // If a value is present in b, all of its occurrences must be removed from the other:
 
-arrayDiff([1,2,2,2,3],[2]) == [1,3]
+arrayDiff([1, 2, 2, 2, 3], [2]); // [1,3]
+
+let solveCount = 1;
+
+function arrayDiff(arr, toDelete) {
+  return arr.filter((char) => !toDelete.includes(char));
+}
