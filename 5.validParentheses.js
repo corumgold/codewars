@@ -6,18 +6,26 @@
 let solveCount = 0;
 
 function validParentheses(parens) {
-  let stack = [];
-  for (let i = 0; i < parens.length; i++) {
-    if (stack[stack.length - 1] === parens[i] || !stack[stack.length - 1]) {
-      stack.push(parens[i]);
-    } else stack.pop();
+  debugger;
+  let parensArr = parens.split("");
+  for (let i = 0; i < parensArr.length; i++) {
+    if (parensArr[i] === "(") {
+      for (let j = i; j < parensArr.length; j++) {
+        if (parensArr[j] === ")") {
+          parensArr.splice(i, 1);
+          parensArr.splice(j, 1);
+          i -= 2;
+          break;
+        }
+      }
+    }
   }
-  return stack.length ? false : true;
+  return parensArr.length ? false : true;
 }
 
-validParentheses("()"); //  true
-validParentheses(")(()))"); //  false
-validParentheses("("); //  false
+// validParentheses("()"); //  true
+// validParentheses(")(()))"); //  false
+// validParentheses("("); //  false
 validParentheses("(())((()())())"); //  true
 
 // 0 <= input.length <= 100
