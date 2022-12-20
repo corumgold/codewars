@@ -1,6 +1,6 @@
 //Link: https://www.codewars.com/kata/526dbd6c8c0eb53254000110/train/javascript
 
-// In this example you have to validate if a user input string is alphanumeric. 
+// In this example you have to validate if a user input string is alphanumeric.
 // The given string is not nil / null / NULL / None, so you don't have to check that.
 
 // The string has the following conditions to be alphanumeric:
@@ -9,12 +9,19 @@
 // Allowed characters are uppercase / lowercase latin letters and digits from 0 to 9
 // No whitespaces / underscore
 
+const solveCount = 1;
 
-
-function alphanumeric(string){
-    //your code here
+function alphanumeric(string) {
+  const valid = 'abcdefghijklmnopqrstuvwxyz1234567890';
+  if (!string) return false;
+  for (let i = 0; i < string.length; i++) {
+    if (valid.includes(string.toLowerCase()[i])) continue;
+    return false;
+  }
+  return true;
 }
-  
-console.log(alphanumeric('abc134'))
-console.log(alphanumeric('$123abc'))
-console.log(alphanumeric(''))
+
+console.log(alphanumeric('abc134')); //true
+console.log(alphanumeric('ABC134')); //true
+console.log(alphanumeric('$123abc')); //false
+console.log(alphanumeric('')); // false
