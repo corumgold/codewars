@@ -11,5 +11,5 @@
 const solveCount = 0;
 
 function humanReadable (seconds) {
-    return '';
+    if (seconds > 60)
   }
