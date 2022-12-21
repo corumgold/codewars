@@ -10,6 +10,11 @@
 
 const solveCount = 0;
 
-function humanReadable (seconds) {
-    if (seconds > 60)
-  }
+function humanReadable(seconds) {
+  return;
+}
+
+humanReadable(0) // '00:00:00'
+humanReadable(59) // '00:00:59'
+humanReadable(90) // '00:01:30'
+humanReadable(45296) // '12:34:56'
