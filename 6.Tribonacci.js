@@ -23,5 +23,17 @@
 const solveCount = 0;
 
 function tribonacci(signature, n) {
-  //your code here
+  const toReturn = [];
+  for (let i = 0; i < n; i++) {
+    if (i < 3) {
+      toReturn.push(signature[i]);
+    } else {
+      toReturn.push(toReturn[i - 1] + toReturn[i - 2] + toReturn[i - 3]);
+    }
+  }
+  return toReturn;
 }
+
+console.log(tribonacci([1, 1, 1], 10)); // [1,1,1,3,5,9,17,31,57,105]
+console.log(tribonacci([0, 0, 1], 10)); // [0,0,1,1,2,4,7,13,24,44] 
+console.log(tribonacci([1, 1, 1], 2)); // [1, 1]
