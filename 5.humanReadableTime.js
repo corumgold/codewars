@@ -11,10 +11,13 @@
 const solveCount = 0;
 
 function humanReadable(seconds) {
-  return;
+  if (seconds >= 3600) {
+    const hrs = seconds -= 3599;
+    console.log(hrs, seconds);
+  }
 }
 
-humanReadable(0) // '00:00:00'
-humanReadable(59) // '00:00:59'
-humanReadable(90) // '00:01:30'
-humanReadable(45296) // '12:34:56'
+humanReadable(0); // '00:00:00'
+humanReadable(59); // '00:00:59'
+humanReadable(90); // '00:01:30'
+humanReadable(45296); // '12:34:56'
