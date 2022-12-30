@@ -6,8 +6,11 @@
 // The tests contain some very huge arrays, so think about performance.
 
 function findUniq(arr) {
-    // do magic
-  }
+  arr.sort();
+  return arr[0] === arr[Math.ceil(arr.length / 2)]
+    ? arr[arr.length - 1]
+    : arr[0];
+}
 
-findUniq([ 1, 1, 1, 2, 1, 1 ]) // 2
-findUniq([ 0, 0, 0.55, 0, 0 ]) // 0.55
+console.log(findUniq([1, 1, 1, 2, 1, 1])); // 2
+console.log(findUniq([0, 0, 0.55, 0, 0])); // 0.55
