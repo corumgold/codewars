@@ -5,6 +5,8 @@
 
 // The tests contain some very huge arrays, so think about performance.
 
+const solveCount = 1;
+
 function findUniq(arr) {
   arr.sort();
   return arr[0] === arr[Math.ceil(arr.length / 2)]
